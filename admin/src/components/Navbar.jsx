@@ -17,7 +17,7 @@ const Navbar = ({ setToken }) => {
               <Crown className="absolute -top-1 -right-1 w-5 h-5 text-admin-accent-500" />
             </div>
             <div>
-              <h1 className="font-display text-2xl font-bold text-admin-primary-900">SanjayShop</h1>
+              <h1 className="font-display text-2xl font-bold text-admin-primary-900">EcomShop</h1>
               <p className="text-sm text-admin-primary-500 tracking-wide uppercase">Admin Dashboard</p>
             </div>
           </div>
