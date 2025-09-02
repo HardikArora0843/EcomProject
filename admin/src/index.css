@@ -1,19 +1,237 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-*{
-    font-family: Outfit;
+:root {
+  /* Admin Color Palette - Professional & Modern */
+  --admin-primary-50: #f8fafc;
+  --admin-primary-100: #f1f5f9;
+  --admin-primary-200: #e2e8f0;
+  --admin-primary-300: #cbd5e1;
+  --admin-primary-400: #94a3b8;
+  --admin-primary-500: #64748b;
+  --admin-primary-600: #475569;
+  --admin-primary-700: #334155;
+  --admin-primary-800: #1e293b;
+  --admin-primary-900: #0f172a;
+  
+  /* Admin Accent - Professional Blue */
+  --admin-accent-50: #eff6ff;
+  --admin-accent-100: #dbeafe;
+  --admin-accent-200: #bfdbfe;
+  --admin-accent-300: #93c5fd;
+  --admin-accent-400: #60a5fa;
+  --admin-accent-500: #3b82f6;
+  --admin-accent-600: #2563eb;
+  --admin-accent-700: #1d4ed8;
+  --admin-accent-800: #1e40af;
+  --admin-accent-900: #1e3a8a;
+  
+  /* Status Colors */
+  --admin-success-50: #f0fdf4;
+  --admin-success-500: #22c55e;
+  --admin-success-600: #16a34a;
+  
+  --admin-warning-50: #fffbeb;
+  --admin-warning-500: #f59e0b;
+  --admin-warning-600: #d97706;
+  
+  --admin-error-50: #fef2f2;
+  --admin-error-500: #ef4444;
+  --admin-error-600: #dc2626;
+  
+  --admin-info-50: #f0f9ff;
+  --admin-info-500: #06b6d4;
+  --admin-info-600: #0891b2;
 }
 
-select,input,textarea{
-    border: 1px solid #c2c2c2;
-    outline-color: #C586A5;
-    border-radius: 4px;
+* {
+  font-family: 'Inter', sans-serif;
 }
 
-.active{
-    background-color: #ffebf5;
-    border-color: #C586A5;
+.font-display {
+  font-family: 'Playfair Display', serif;
+}
+
+body {
+  background-color: var(--admin-primary-50);
+  color: var(--admin-primary-800);
+  line-height: 1.6;
+}
+
+/* Admin Button System */
+.admin-btn-primary {
+  @apply bg-admin-accent-600 text-white px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-300 hover:bg-admin-accent-700 hover:shadow-lg hover:-translate-y-0.5 focus:ring-4 focus:ring-admin-accent-500/30;
+}
+
+.admin-btn-secondary {
+  @apply bg-white border-2 border-admin-primary-200 text-admin-primary-700 px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-300 hover:border-admin-accent-300 hover:text-admin-accent-600 hover:shadow-md;
+}
+
+.admin-btn-success {
+  @apply bg-admin-success-600 text-white px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-300 hover:bg-admin-success-700 hover:shadow-lg;
+}
+
+.admin-btn-danger {
+  @apply bg-admin-error-600 text-white px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-300 hover:bg-admin-error-700 hover:shadow-lg;
+}
+
+.admin-btn-warning {
+  @apply bg-admin-warning-600 text-white px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-300 hover:bg-admin-warning-700 hover:shadow-lg;
+}
+
+/* Admin Card System */
+.admin-card {
+  @apply bg-white rounded-2xl shadow-sm border border-admin-primary-100 transition-all duration-300 hover:shadow-md;
+}
+
+.admin-card-elevated {
+  @apply bg-white rounded-2xl shadow-lg border border-admin-primary-100;
+}
+
+/* Admin Input System */
+.admin-input {
+  @apply w-full px-4 py-3 border-2 border-admin-primary-200 rounded-xl focus:outline-none focus:ring-4 focus:ring-admin-accent-500/20 focus:border-admin-accent-500 transition-all duration-200 bg-white text-admin-primary-800;
+}
+
+.admin-textarea {
+  @apply w-full px-4 py-3 border-2 border-admin-primary-200 rounded-xl focus:outline-none focus:ring-4 focus:ring-admin-accent-500/20 focus:border-admin-accent-500 transition-all duration-200 bg-white text-admin-primary-800 resize-none;
+}
+
+.admin-select {
+  @apply w-full px-4 py-3 border-2 border-admin-primary-200 rounded-xl focus:outline-none focus:ring-4 focus:ring-admin-accent-500/20 focus:border-admin-accent-500 transition-all duration-200 bg-white text-admin-primary-800;
+}
+
+/* Admin Navigation */
+.admin-nav-link {
+  @apply flex items-center space-x-3 px-4 py-3 rounded-xl text-admin-primary-600 hover:text-admin-accent-600 hover:bg-admin-accent-50 transition-all duration-200 font-medium;
+}
+
+.admin-nav-link.active {
+  @apply bg-admin-accent-600 text-white shadow-lg;
+}
+
+/* Admin Table Styles */
+.admin-table {
+  @apply w-full bg-white rounded-2xl shadow-sm border border-admin-primary-100 overflow-hidden;
+}
+
+.admin-table-header {
+  @apply bg-admin-primary-50 border-b border-admin-primary-100;
+}
+
+.admin-table-row {
+  @apply border-b border-admin-primary-100 hover:bg-admin-primary-25 transition-colors duration-200;
+}
+
+/* Status Badges */
+.status-badge {
+  @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold;
+}
+
+.status-success {
+  @apply bg-admin-success-50 text-admin-success-600;
+}
+
+.status-warning {
+  @apply bg-admin-warning-50 text-admin-warning-600;
+}
+
+.status-error {
+  @apply bg-admin-error-50 text-admin-error-600;
+}
+
+.status-info {
+  @apply bg-admin-info-50 text-admin-info-600;
+}
+
+/* Admin Animations */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.5s ease-out;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Custom Scrollbar for Admin */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--admin-primary-100);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--admin-primary-300);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--admin-primary-400);
+}
+
+/* Admin Dashboard Specific */
+.dashboard-stat-card {
+  @apply bg-white rounded-2xl p-6 shadow-sm border border-admin-primary-100 hover:shadow-md transition-all duration-300;
+}
+
+.dashboard-chart-card {
+  @apply bg-white rounded-2xl p-6 shadow-sm border border-admin-primary-100;
+}
+
+/* File Upload Styles */
+.upload-area {
+  @apply border-2 border-dashed border-admin-primary-300 rounded-2xl p-8 text-center hover:border-admin-accent-400 hover:bg-admin-accent-50/50 transition-all duration-300 cursor-pointer;
+}
+
+.upload-area.active {
+  @apply border-admin-accent-500 bg-admin-accent-50;
+}
+
+/* Form Validation */
+.input-error {
+  @apply border-admin-error-500 focus:ring-admin-error-500/20 focus:border-admin-error-500;
+}
+
+.input-success {
+  @apply border-admin-success-500 focus:ring-admin-success-500/20 focus:border-admin-success-500;
+}
+
+/* Loading States */
+.admin-skeleton {
+  @apply animate-pulse bg-admin-primary-200 rounded-xl;
+}
+
+/* Responsive Utilities */
+@media (max-width: 768px) {
+  .admin-sidebar {
+    @apply transform -translate-x-full transition-transform duration-300;
+  }
+  
+  .admin-sidebar.open {
+    @apply translate-x-0;
+  }
 }

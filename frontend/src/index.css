@@ -1,31 +1,282 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Prata&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-a.active hr{
-    display:block;
-}
-
-*{
-    font-family: Outfit;
-}
-
-.prata-regular {
-    font-family: "Prata", serif;
-    font-weight: 400;
-    font-style: normal;
-  }
+:root {
+  /* Primary - Deep Navy */
+  --primary-50: #f8fafc;
+  --primary-100: #f1f5f9;
+  --primary-200: #e2e8f0;
+  --primary-300: #cbd5e1;
+  --primary-400: #94a3b8;
+  --primary-500: #64748b;
+  --primary-600: #475569;
+  --primary-700: #334155;
+  --primary-800: #1e293b;
+  --primary-900: #0f172a;
   
-  ::-webkit-scrollbar{
-    display: none;
-  }
-
-@media(max-width:640px){
-    a.active{
-        background-color: black;
-        color: white;
-    }
+  /* Accent - Warm Gold */
+  --accent-50: #fffbeb;
+  --accent-100: #fef3c7;
+  --accent-200: #fde68a;
+  --accent-300: #fcd34d;
+  --accent-400: #fbbf24;
+  --accent-500: #f59e0b;
+  --accent-600: #d97706;
+  --accent-700: #b45309;
+  --accent-800: #92400e;
+  --accent-900: #78350f;
+  
+  /* Neutral - Sophisticated Grays */
+  --neutral-50: #fafafa;
+  --neutral-100: #f5f5f5;
+  --neutral-200: #e5e5e5;
+  --neutral-300: #d4d4d4;
+  --neutral-400: #a3a3a3;
+  --neutral-500: #737373;
+  --neutral-600: #525252;
+  --neutral-700: #404040;
+  --neutral-800: #262626;
+  --neutral-900: #171717;
+  
+  /* Success */
+  --success-50: #f0fdf4;
+  --success-500: #22c55e;
+  --success-600: #16a34a;
+  
+  /* Error */
+  --error-50: #fef2f2;
+  --error-500: #ef4444;
+  --error-600: #dc2626;
+  
+  /* Warning */
+  --warning-50: #fffbeb;
+  --warning-500: #f59e0b;
+  --warning-600: #d97706;
 }
 
+* {
+  font-family: 'Inter', sans-serif;
+}
+
+.font-display {
+  font-family: 'Playfair Display', serif;
+}
+
+body {
+  background-color: var(--neutral-50);
+  color: var(--neutral-800);
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+/* Typography Scale */
+.text-display-xl { font-size: 4.5rem; line-height: 1.1; }
+.text-display-lg { font-size: 3.75rem; line-height: 1.1; }
+.text-display-md { font-size: 3rem; line-height: 1.2; }
+.text-display-sm { font-size: 2.25rem; line-height: 1.25; }
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--neutral-100);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--neutral-300);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--neutral-400);
+}
+
+/* Button System */
+.btn-primary {
+  @apply bg-primary-900 text-white px-8 py-4 rounded-lg font-semibold text-sm tracking-wide transition-all duration-300 hover:bg-primary-800 hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0;
+}
+
+.btn-secondary {
+  @apply bg-white border-2 border-primary-200 text-primary-900 px-8 py-4 rounded-lg font-semibold text-sm tracking-wide transition-all duration-300 hover:border-primary-300 hover:shadow-lg hover:-translate-y-0.5;
+}
+
+.btn-accent {
+  @apply bg-accent-600 text-white px-8 py-4 rounded-lg font-semibold text-sm tracking-wide transition-all duration-300 hover:bg-accent-700 hover:shadow-xl hover:-translate-y-0.5;
+}
+
+.btn-ghost {
+  @apply bg-transparent text-primary-700 px-6 py-3 rounded-lg font-medium transition-all duration-300 hover:bg-primary-50;
+}
+
+/* Card System */
+.card {
+  @apply bg-white rounded-2xl shadow-sm border border-neutral-100 transition-all duration-300 hover:shadow-lg;
+}
+
+.card-elevated {
+  @apply bg-white rounded-2xl shadow-lg border border-neutral-100 transition-all duration-300 hover:shadow-xl;
+}
+
+.card-luxury {
+  @apply bg-white rounded-3xl shadow-xl border border-neutral-100 backdrop-blur-sm;
+}
+
+/* Input System */
+.input-field {
+  @apply w-full px-6 py-4 border border-neutral-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200 bg-white text-neutral-800 placeholder-neutral-400;
+}
+
+.input-luxury {
+  @apply w-full px-6 py-4 border-2 border-neutral-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-accent-500 focus:border-accent-500 transition-all duration-300 bg-neutral-50 text-neutral-800 placeholder-neutral-500;
+}
+
+/* Navigation States */
+.nav-link {
+  @apply text-neutral-600 hover:text-primary-900 font-medium transition-all duration-200 relative;
+}
+
+.nav-link.active {
+  @apply text-primary-900;
+}
+
+.nav-link::after {
+  content: '';
+  @apply absolute -bottom-1 left-0 w-0 h-0.5 bg-accent-600 transition-all duration-300;
+}
+
+.nav-link.active::after,
+.nav-link:hover::after {
+  @apply w-full;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.6s ease-out;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.5s ease-out;
+}
+
+/* Product Effects */
+.product-card {
+  @apply transition-all duration-500 hover:scale-105 hover:shadow-2xl;
+}
+
+.product-image {
+  @apply transition-transform duration-700 hover:scale-110;
+}
+
+/* Gradient Backgrounds */
+.gradient-primary {
+  background: linear-gradient(135deg, var(--primary-800) 0%, var(--primary-900) 100%);
+}
+
+.gradient-accent {
+  background: linear-gradient(135deg, var(--accent-500) 0%, var(--accent-700) 100%);
+}
+
+.gradient-luxury {
+  background: linear-gradient(135deg, var(--primary-900) 0%, var(--neutral-900) 50%, var(--accent-900) 100%);
+}
+
+/* Glass Morphism */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.glass-dark {
+  background: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Loading States */
+.skeleton {
+  @apply animate-pulse bg-neutral-200 rounded-xl;
+}
+
+/* Focus States */
+.focus-ring {
+  @apply focus:outline-none focus:ring-4 focus:ring-primary-500/20 focus:ring-offset-2;
+}
+
+/* Luxury Shadows */
+.shadow-luxury {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+.shadow-luxury-lg {
+  box-shadow: 0 35px 60px -12px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+/* Text Effects */
+.text-gradient {
+  @apply bg-gradient-to-r from-primary-600 to-accent-600 bg-clip-text text-transparent;
+}
+
+.text-gradient-luxury {
+  @apply bg-gradient-to-r from-accent-600 via-accent-500 to-accent-700 bg-clip-text text-transparent;
+}
+
+/* Hover Effects */
+.hover-lift {
+  @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-luxury;
+}
+
+.hover-glow {
+  @apply transition-all duration-300 hover:shadow-lg hover:shadow-accent-500/25;
+}
+
+/* Custom Utilities */
+.backdrop-blur-luxury {
+  backdrop-filter: blur(40px);
+}
+
+.border-gradient {
+  border-image: linear-gradient(135deg, var(--accent-500), var(--primary-600)) 1;
+}
