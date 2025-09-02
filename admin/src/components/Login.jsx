@@ -2,7 +2,7 @@ import axios from 'axios'
 import React, { useState } from 'react'
 import { backendUrl } from '../App'
 import { toast } from 'react-toastify'
-import { Crown, Mail, Lock, ShieldCheck, Sparkles, Eye, EyeOff, Package } from 'lucide-react'
+import { Crown, Mail, Lock, ShieldCheck, Sparkles, Eye, EyeOff, Package, BarChart3 } from 'lucide-react'
 
 const Login = ({ setToken }) => {
   const [email, setEmail] = useState('')
