@@ -2,7 +2,7 @@ import React, { useEffect, useState, useContext } from 'react'
 import { ShopContext } from '../context/ShopContext'
 import axios from 'axios'
 import { toast } from 'react-toastify'
-import { Crown, Mail, Lock, User, Sparkles, Shield, Gift, Heart } from 'lucide-react'
+import { Crown, Mail, Lock, User, Sparkles, ShieldCheck, Gift, Heart } from 'lucide-react'
 
 const Login = () => {
   const [currentState, setCurrentState] = useState('Login')
@@ -180,7 +180,7 @@ const Login = () => {
           {/* Security Notice */}
           <div className="mt-8 p-4 bg-primary-50 rounded-2xl border border-primary-100">
             <div className="flex items-center justify-center text-primary-700 text-sm">
-              <Shield className="w-4 h-4 mr-2" />
+              <ShieldCheck className="w-4 h-4 mr-2" />
               <span>Your information is protected with bank-level security</span>
             </div>
           </div>
