@@ -87,7 +87,7 @@ const Login = ({ setToken }) => {
                     value={email}
                     className="admin-input pl-12"
                     type="email"
-                    placeholder="admin@sanjayshop.com"
+                    placeholder="admin@ecomshop.com"
                     required
                   />
                 </div>
