@@ -2,7 +2,7 @@ import axios from 'axios'
 import React, { useState } from 'react'
 import { backendUrl } from '../App'
 import { toast } from 'react-toastify'
-import { Crown, Mail, Lock, Shield, Sparkles, Eye, EyeOff } from 'lucide-react'
+import { Crown, Mail, Lock, ShieldCheck, Sparkles, Eye, EyeOff } from 'lucide-react'
 
 const Login = ({ setToken }) => {
   const [email, setEmail] = useState('')
@@ -62,7 +62,7 @@ const Login = ({ setToken }) => {
           {/* Card Header */}
           <div className="bg-gradient-to-r from-admin-accent-600 to-admin-accent-700 text-white p-8 text-center">
             <div className="inline-flex items-center bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 mb-4">
-              <Shield className="w-4 h-4 mr-2" />
+              <ShieldCheck className="w-4 h-4 mr-2" />
               <span className="text-sm font-semibold tracking-wide uppercase">Secure Access</span>
             </div>
             <h2 className="font-display text-2xl font-bold mb-2">Administrator Login</h2>
@@ -143,7 +143,7 @@ const Login = ({ setToken }) => {
             {/* Security Notice */}
             <div className="mt-8 bg-admin-accent-50 rounded-2xl p-4 border border-admin-accent-100">
               <div className="flex items-center text-admin-accent-700 text-sm">
-                <Shield className="w-4 h-4 mr-2 flex-shrink-0" />
+                <ShieldCheck className="w-4 h-4 mr-2 flex-shrink-0" />
                 <span>This is a secure admin area. All activities are logged and monitored.</span>
               </div>
             </div>
