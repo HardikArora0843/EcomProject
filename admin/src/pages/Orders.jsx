@@ -3,7 +3,7 @@ import axios from 'axios'
 import { backendUrl, currency } from '../App'
 import { toast } from 'react-toastify'
 import { assets } from '../assets/assets'
-import { Package, Clock, Truck, CheckCircle, XCircle, Search, Filter, Calendar, User, MapPin, Phone } from 'lucide-react'
+import { Package, Clock, Truck, CheckCircle, XCircle, Search, Filter, Calendar, User, MapPin, Phone, Star } from 'lucide-react'
 
 const Orders = ({ token }) => {
   const [orders, setOrders] = useState([])
