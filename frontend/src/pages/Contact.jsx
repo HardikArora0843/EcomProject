@@ -17,7 +17,7 @@ const Contact = () => {
         <div className='flex flex-col justify-center items-start gap-6'>
           <p className='font-semibold text-xl text-gray-600'>Our Store</p>
           <p className='text-gray-500'>1-F/112 <br />N.I.T Faridabad, Haryana</p>
-          <p className='text-gray-500'>Tel: (+91) 9953782948 <br />Email: admin@sanjaysales.com </p>
+          <p className='text-gray-500'>Tel: (+91) 9953782948 <br />Email: admin@ecomsales.com </p>
           <p className='font-semibold text-xl text-gray-600'>Careers ata Forever</p>
           <p className='text-gray-500'>Learn more about out team and job openings.</p>
           <button className='border border-black px-8 py-4 text-sm hover:bg-black hover:text-white transition-all duration-500'>Explore Jobs</button>
