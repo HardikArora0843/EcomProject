@@ -2,7 +2,7 @@ import React, { useEffect, useState, useContext } from 'react'
 import { ShopContext } from '../context/ShopContext'
 import axios from 'axios'
 import { toast } from 'react-toastify'
-import { Crown, Mail, Lock, User, Sparkles, Shield } from 'lucide-react'
+import { Crown, Mail, Lock, User, Sparkles, Shield, Gift, Heart } from 'lucide-react'
 
 const Login = () => {
   const [currentState, setCurrentState] = useState('Login')
@@ -205,7 +205,7 @@ const Login = () => {
           </div>
         </div>
       </div>
-{/*     </div> */}
+    </div>  {/* ✅ properly closed */}
   )
 }
 
