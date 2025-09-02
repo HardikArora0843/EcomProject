@@ -2,7 +2,7 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { backendUrl, currency } from '../App'
 import { toast } from 'react-toastify'
-import { Package, Search, Filter, Trash2, Edit, Eye, Crown, Star } from 'lucide-react'
+import { Package, Search, Filter, Trash2, Edit, Eye, Crown, Star,Plus } from 'lucide-react'
 
 const List = ({ token }) => {
   const [list, setList] = useState([])
