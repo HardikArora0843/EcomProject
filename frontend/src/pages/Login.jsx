@@ -205,7 +205,7 @@ const Login = () => {
           </div>
         </div>
       </div>
-    </div>  {/* ✅ properly closed */}
+    </div> 
   )
 }
 
