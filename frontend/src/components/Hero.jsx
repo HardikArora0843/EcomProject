@@ -1,6 +1,6 @@
 import React from 'react'
 import { assets } from '../assets/assets'
-import { ArrowRight, Star, Truck, Shield, RotateCcw, Sparkles, Crown } from 'lucide-react'
+import { ArrowRight, Star, Truck, ShieldCheck, RotateCcw, Sparkles, Crown } from 'lucide-react'
 
 const Hero = () => {
   return (
@@ -137,7 +137,7 @@ const Hero = () => {
 
             <div className="group text-center hover-lift">
               <div className="w-20 h-20 bg-gradient-to-br from-success-100 to-success-200 rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:shadow-luxury transition-all duration-300">
-                <Shield className="w-10 h-10 text-success-700" strokeWidth={1.5} />
+                <ShieldCheck className="w-10 h-10 text-success-700" strokeWidth={1.5} />
               </div>
               <h3 className="font-display text-xl font-semibold text-primary-900 mb-3">Secure Transactions</h3>
               <p className="text-neutral-600 leading-relaxed">Bank-level security with encrypted payments and comprehensive buyer protection</p>
