@@ -40,7 +40,7 @@ const Navbar = () => {
                 <div className="absolute -top-1 -right-1 w-4 h-4 bg-accent-500 rounded-full animate-pulse-slow"></div>
               </div>
               <div className="flex flex-col">
-                <span className="font-display text-2xl font-bold text-primary-900 tracking-tight">SanjayShop</span>
+                <span className="font-display text-2xl font-bold text-primary-900 tracking-tight">EcomShop</span>
                 <span className="text-xs text-neutral-500 tracking-widest uppercase">Premium Fashion</span>
               </div>
             </Link>
