@@ -117,7 +117,7 @@ const NewsLetterBox = () => {
 
         {/* Trust indicators */}
         <div className="mt-12 text-primary-200 text-sm flex items-center justify-center space-x-8">
-          <span className="flex items-center"><Shield className="w-4 h-4 mr-1" /> Secure & Private</span>
+          <span className="flex items-center"><ShieldCheck className="w-4 h-4 mr-1" /> Secure & Private</span>
           <span className="flex items-center"><Heart className="w-4 h-4 mr-1" /> No Spam Promise</span>
           <span className="flex items-center"><Crown className="w-4 h-4 mr-1" /> 50,000+ VIP Members</span>
         </div>
