@@ -3,7 +3,7 @@ import { ShopContext } from '../context/ShopContext'
 import { assets } from '../assets/assets'
 import Title from '../components/Title'
 import ProductItem from '../components/ProductItem'
-import { Filter, Grid, List, SlidersHorizontal, Sparkles, TrendingUp, Crown } from 'lucide-react'
+import { Filter, Grid, List, SlidersHorizontal, Sparkles, TrendingUp, Crown, Search } from 'lucide-react'
 
 const Collection = () => {
   const { products, search, showSearch } = useContext(ShopContext)
