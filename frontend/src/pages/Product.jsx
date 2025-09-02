@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom'
 import { ShopContext } from '../context/ShopContext'
 import { assets } from '../assets/assets'
 import RelatedProducts from '../components/RelatedProducts'
-import { Star, Heart, Share2, Truck, RotateCcw, Shield, Crown, Sparkles, Award } from 'lucide-react'
+import { Star, Heart, Share2, Truck, RotateCcw, ShieldCheck, Crown, Sparkles, Award } from 'lucide-react'
 
 const Product = () => {
   const { productId } = useParams()
@@ -191,7 +191,7 @@ const Product = () => {
               </div>
               
               <div className="bg-white rounded-2xl p-4 shadow-soft border border-neutral-100 text-center">
-                <Shield className="w-8 h-8 text-success-600 mx-auto mb-2" />
+                <ShieldCheck className="w-8 h-8 text-success-600 mx-auto mb-2" />
                 <div className="font-semibold text-primary-900 text-sm">Authentic</div>
                 <div className="text-neutral-600 text-xs">100% genuine product</div>
               </div>
@@ -312,7 +312,7 @@ const Product = () => {
             
             <div className="text-center">
               <div className="w-16 h-16 bg-gradient-to-br from-success-100 to-success-200 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <Shield className="w-8 h-8 text-success-600" />
+                <ShieldCheck className="w-8 h-8 text-success-600" />
               </div>
               <h4 className="font-semibold text-primary-900 mb-2">Authenticity Guaranteed</h4>
               <p className="text-neutral-600 text-sm">100% genuine products with authenticity certificate</p>
