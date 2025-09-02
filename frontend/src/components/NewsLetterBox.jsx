@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Mail, Gift, Sparkles, Crown, Star, Heart } from 'lucide-react'
+import { Mail, Gift, Sparkles, Crown, Star, Heart, ShieldCheck } from 'lucide-react'
 
 const NewsLetterBox = () => {
   const [email, setEmail] = useState('')
