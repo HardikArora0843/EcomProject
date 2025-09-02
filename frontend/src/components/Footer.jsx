@@ -28,7 +28,7 @@ const Footer = () => {
                   <Crown className="absolute -top-2 -right-2 w-6 h-6 text-accent-400" />
                 </div>
                 <div>
-                  <span className="font-display text-3xl font-bold">SanjayShop</span>
+                  <span className="font-display text-3xl font-bold">EcomShop</span>
                   <div className="text-accent-300 text-sm tracking-widest uppercase">Premium Fashion House</div>
                 </div>
               </div>
@@ -146,7 +146,7 @@ const Footer = () => {
               </div>
               <div>
                 <div className="font-semibold text-lg">Concierge Service</div>
-                <div className="text-primary-200 text-sm">contact@sanjaysales.com</div>
+                <div className="text-primary-200 text-sm">contact@ecomsales.com</div>
               </div>
             </div>
           </div>
@@ -188,7 +188,7 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-primary-300 text-sm mb-4 md:mb-0 flex items-center">
               <Crown className="w-4 h-4 mr-2 text-accent-400" />
-              © 2024 SanjayShop. Crafted with excellence. All rights reserved.
+              © 2024 EcomShop. Crafted with excellence. All rights reserved.
             </div>
             
             <div className="flex items-center space-x-8 text-sm text-primary-300">
