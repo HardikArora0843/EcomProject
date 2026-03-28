@@ -10,33 +10,13 @@ import orderRouter from './routes/orderRoute.js'
 // App Config
 const app = express()
 const port = process.env.PORT || 4000
-connectDB()
 connectCloudinary()
+connectDB().catch((err) => console.error('MongoDB connection error:', err))
 
-// CORS: must run before body parsers. Vercel serverless + browser preflight (OPTIONS) need this.
-// If ALLOWED_ORIGINS is unset → allow any Origin (reflect). If set → merge with defaults below + env.
-const DEFAULT_ORIGINS = [
-  'https://ecom-project-admin.vercel.app',
-  'http://localhost:5173',
-  'http://localhost:5174',
-]
-const envOrigins = (process.env.ALLOWED_ORIGINS || '')
-  .split(',')
-  .map((s) => s.trim())
-  .filter(Boolean)
-const allowAny = envOrigins.length === 0
-const mergedAllowed = [...new Set([...DEFAULT_ORIGINS, ...envOrigins])]
-
+// CORS: first middleware, before body parsers. Use * + no credentials so admin + storefront work
+// without a fixed allowlist (Axios default is withCredentials: false).
 app.use((req, res, next) => {
-  const origin = req.headers.origin
-
-  if (origin && (allowAny || mergedAllowed.includes(origin))) {
-    res.setHeader('Access-Control-Allow-Origin', origin)
-    res.setHeader('Access-Control-Allow-Credentials', 'true')
-  } else if (!origin) {
-    res.setHeader('Access-Control-Allow-Origin', '*')
-  }
-
+  res.setHeader('Access-Control-Allow-Origin', '*')
   res.setHeader(
     'Access-Control-Allow-Methods',
     'GET,POST,PUT,DELETE,PATCH,OPTIONS'
@@ -64,7 +44,7 @@ app.get('/', (req, res) => {
   res.send('API Working')
 })
 
-// Local / traditional Node: listen. Vercel: serverless handler is the exported app (no listen).
+// Local: listen. Vercel: default export must be the Express app (see Vercel Express docs).
 if (!process.env.VERCEL) {
   app.listen(port, () => console.log('Server started on PORT : ' + port))
 }
