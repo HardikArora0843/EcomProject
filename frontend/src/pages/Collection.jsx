@@ -1,14 +1,11 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useMemo, useState } from 'react'
 import { ShopContext } from '../context/ShopContext'
-import { assets } from '../assets/assets'
-import Title from '../components/Title'
 import ProductItem from '../components/ProductItem'
 import { Filter, Grid, List, SlidersHorizontal, Sparkles, TrendingUp, Crown, Search } from 'lucide-react'
 
 const Collection = () => {
   const { products, search, showSearch } = useContext(ShopContext)
   const [showFilter, setShowFilter] = useState(false)
-  const [filterProducts, setFilterProducts] = useState([])
   const [category, setCategory] = useState([])
   const [subCategory, setSubCategory] = useState([])
   const [sortType, setSortType] = useState('relevant')
@@ -30,53 +27,33 @@ const Collection = () => {
     }
   }
 
-  const applyFilter = () => {
-    let productsCopy = products.slice()
+  const filterProducts = useMemo(() => {
+    let productsCopy = Array.isArray(products) ? products.slice() : []
 
     if (showSearch && search) {
-      productsCopy = productsCopy.filter(item => 
-        item.name.toLowerCase().includes(search.toLowerCase())
+      const q = search.toLowerCase()
+      productsCopy = productsCopy.filter((item) =>
+        item.name?.toLowerCase().includes(q)
       )
     }
-    
+
     if (category.length > 0) {
-      productsCopy = productsCopy.filter(item => category.includes(item.category))
+      productsCopy = productsCopy.filter((item) => category.includes(item.category))
     }
 
     if (subCategory.length > 0) {
-      productsCopy = productsCopy.filter(item => subCategory.includes(item.subCategory))
+      productsCopy = productsCopy.filter((item) => subCategory.includes(item.subCategory))
     }
-    
-    setFilterProducts(productsCopy)
-  }
-
-  const sortProduct = () => {
-    let fpCopy = filterProducts.slice()
 
     switch (sortType) {
       case 'low-high':
-        setFilterProducts(fpCopy.sort((a, b) => (a.price - b.price)))
-        break
+        return [...productsCopy].sort((a, b) => (a.price ?? 0) - (b.price ?? 0))
       case 'high-low':
-        setFilterProducts(fpCopy.sort((a, b) => (b.price - a.price)))
-        break
+        return [...productsCopy].sort((a, b) => (b.price ?? 0) - (a.price ?? 0))
       default:
-        applyFilter()
-        break
+        return productsCopy
     }
-  }
-
-  useEffect(() => {
-    setFilterProducts(products)
-  }, [])
-
-  useEffect(() => {
-    applyFilter()
-  }, [category, subCategory, search, showSearch, products])
-
-  useEffect(() => {
-    sortProduct()
-  }, [sortType])
+  }, [products, category, subCategory, search, showSearch, sortType])
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-neutral-50">
