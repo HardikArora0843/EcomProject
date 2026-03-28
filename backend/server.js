@@ -14,9 +14,40 @@ const port = process.env.PORT || 4000
 connectDB()
 connectCloudinary()
 
+// CORS must run before body parsers so OPTIONS preflight and all responses get headers.
+// origin: true reflects the request Origin (needed for browser + Vercel admin/frontend).
+// Optional: set ALLOWED_ORIGINS in .env (comma-separated) to restrict; otherwise any origin is reflected.
+const extraOrigins = (process.env.ALLOWED_ORIGINS || '')
+  .split(',')
+  .map((s) => s.trim())
+  .filter(Boolean)
+
+const corsOptions =
+  extraOrigins.length > 0
+    ? {
+        origin(origin, callback) {
+          if (!origin) return callback(null, true)
+          if (extraOrigins.includes(origin)) return callback(null, true)
+          callback(new Error('Not allowed by CORS'))
+        },
+        credentials: true,
+        methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+        allowedHeaders: ['Content-Type', 'Authorization', 'token', 'X-Requested-With'],
+        optionsSuccessStatus: 204,
+      }
+    : {
+        origin: true,
+        credentials: true,
+        methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+        allowedHeaders: ['Content-Type', 'Authorization', 'token', 'X-Requested-With'],
+        optionsSuccessStatus: 204,
+      }
+
+app.use(cors(corsOptions))
+app.options('*', cors(corsOptions))
+
 // middlewares
 app.use(express.json())
-app.use(cors())
 
 // api endpoints
 app.use('/api/user',userRouter)
