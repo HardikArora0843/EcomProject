@@ -11,14 +11,26 @@ const About = () => {
       </div>
 
       <div className='my-10 flex flex-col md:flex-row gap-16'>
-        <img className='w-full md:max-w-[450px]' src={assets.about_img} alt="" />
+        <img className='w-full md:max-w-[450px]' src={assets.about_img} alt="EcomShop team and curated fashion" />
 
         <div className='flex flex-col justify-center gap-6 md:w-2/4 text-gray-600'>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, porro eos facilis impedit deserunt hic iure dolore vero quo quas eaque. Quidem, labore! Laboriosam molestias pariatur similique. Quisquam, inventore tempore?</p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi rerum doloremque vel minus reprehenderit sed nisi ad dignissimos temporibus unde? Incidunt in error pariatur dolore voluptate, nesciunt aliquid sint nobis.</p>
+          <p>
+            EcomShop is a premium fashion destination built for people who want quality, fit, and style without compromise.
+            We curate apparel and accessories from trusted partners, focus on durable fabrics and thoughtful design, and
+            bring everything together in one calm, easy shopping experience.
+          </p>
+          <p>
+            Whether you are refreshing your everyday wardrobe or looking for standout pieces for special occasions, we are
+            here to help you choose with confidence. Transparent pricing, clear sizing, and honest product detail are at
+            the heart of how we work.
+          </p>
 
           <b className='text-gray-800'>Our Mission</b>
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi labore, aspernatur nobis libero vero earum autem esse dolorum aliquam. Eaque mollitia consectetur iste laborum unde. Aperiam consectetur recusandae nemo eveniet.</p>
+          <p>
+            Our mission is simple: make reliable, stylish fashion accessible to customers across India. We invest in
+            quality checks, responsive support, and a seamless journey from browse to delivery—so you spend less time
+            worrying and more time enjoying what you wear.
+          </p>
         </div>
       </div>
 
@@ -29,17 +41,26 @@ const About = () => {
       <div className='flex flex-col md:flex-row text-sm mb-20'>
         <div className='border px-10 md:px-16 py-8 sm:py-20 flex flex-col gap-5'>
           <b>Quality Assurance:</b>
-          <p className='text-gray-600'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis natus enim culpa sequi esse eos nemo temporibus veniam amet praesentium, vel maiores, unde quasi placeat! Illo praesentium nesciunt dicta reiciendis?</p>
+          <p className='text-gray-600'>
+            Every product we list is chosen with care: we look at stitching, fabric feel, colour fastness, and how true
+            sizes run. If something does not meet our standards, it does not make it to you.
+          </p>
         </div>
 
         <div className='border px-10 md:px-16 py-8 sm:py-20 flex flex-col gap-5'>
           <b>Convenience:</b>
-          <p className='text-gray-600'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis natus enim culpa sequi esse eos nemo temporibus veniam amet praesentium, vel maiores, unde quasi placeat! Illo praesentium nesciunt dicta reiciendis?</p>
+          <p className='text-gray-600'>
+            Shop anywhere, on any device. Save your favourites, track orders in one place, and enjoy simple checkout with
+            secure payment options. We keep the process short so you can get back to your day.
+          </p>
         </div>
 
         <div className='border px-10 md:px-16 py-8 sm:py-20 flex flex-col gap-5'>
           <b>Exceptional Customer Service:</b>
-          <p className='text-gray-600'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis natus enim culpa sequi esse eos nemo temporibus veniam amet praesentium, vel maiores, unde quasi placeat! Illo praesentium nesciunt dicta reiciendis?</p>
+          <p className='text-gray-600'>
+            Our support team answers sizing questions, delivery updates, and returns with clarity and speed. We treat every
+            order as important—because your trust is what keeps us growing.
+          </p>
         </div>
       </div>
 
